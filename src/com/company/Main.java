@@ -6,27 +6,15 @@ import java.util.*;
 public class Main{
 
 
-    public static String reverse(String str)
+    public static String reverse(String[] messageString)
     {
-
-        if (str == null || str.equals("")) {
-            return str;
+        String finalString = new String();
+        for (int k = messageString.length-1; k >=0 ; k--){
+            //     str = reverse(messageString[messageString.length- 1-k]) + " ";
+            finalString = finalString.concat(messageString[k]) + " ";
+            System.out.println("The reversed string is " + finalString);
         }
-
-
-        int n = str.length();
-
-
-        char[] temp = new char[n];
-
-
-        for (int i = 0; i < n; i++) {
-            temp[n - n+ i] = str.charAt(i);
-           // System.out.println("Temp " + temp)
-        }
-
-
-        return String.copyValueOf(temp);
+        return finalString;
     }
 
 
@@ -39,16 +27,10 @@ public class Main{
         String[] messageString = str.split(" ");
         System.out.println("The messageString string is " + messageString.length);
 
-        StringBuilder finalString = new StringBuilder();
-        for (int k = 0; k < messageString.length; k++){
-            str = reverse(messageString[messageString.length- 1-k]) + " ";
-            finalString.append(str);
-            System.out.println("The reversed string is " + finalString);
-    }
-        System.out.println("The reversed string is1 " + finalString);
+        String reverseString = reverse(messageString);
+
+        System.out.println("The reversed string is1 " + reverseString);
 
 
     }
 }
-
-
